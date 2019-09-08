@@ -27,10 +27,10 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name="tb_medicos")
+@Table(name="tb_paciente")
 @NoArgsConstructor
 @EqualsAndHashCode(of="id")
-public class Medico implements Serializable {
+public class Paciente implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -41,7 +41,7 @@ public class Medico implements Serializable {
 	
 	@Override
 	public String toString() {
-		return "Medico [id=" + id + ", nome=" + nome + ", email=" + email + ", crm=" + crm + "]";
+		return "Paciente [id=" + id + ", nome=" + nome + ", email=" + email + ", telefone=" + telefone + "]";
 	}
 
 	public Long getId() {
@@ -68,18 +68,18 @@ public class Medico implements Serializable {
 		this.email = email;
 	}
 
-	public String getCrm() {
-		return crm;
+	public String getTelefone() {
+		return telefone;
 	}
 
-	public void setCrm(String crm) {
-		this.crm = crm;
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
 	}
 
 	@NotEmpty(message = "{email.vazio}")
 	@Email
 	private String email;
 	
-	@NotBlank(message = "CRM é obrigatório")
-	private String crm;
+	@NotBlank(message = "Telefone é obrigatório")
+	private String telefone;
 }
