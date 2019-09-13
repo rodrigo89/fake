@@ -11,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import br.com.fake.model.Medico;
 import br.com.fake.repository.MedicoRepository;
+import jdk.nashorn.internal.runtime.FindProperty;
 
 /**
  * @author carlosbarbosagomesfilho
@@ -31,6 +32,12 @@ public class MedicoService {
 	@Transactional
 	public void salva(Medico medico) {
 		this.repository.save(medico);
+	}
+
+	@Transactional
+	public void delete(Long id) {
+		this.repository.deleteById(id);
+		
 	}
 	
 }

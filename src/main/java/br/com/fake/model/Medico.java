@@ -39,6 +39,13 @@ public class Medico implements Serializable {
 	@NotBlank(message = "Nome é obrigatório")
 	private String nome;
 	
+	@NotEmpty(message = "{email.vazio}")
+	@Email
+	private String email;
+	
+	@NotBlank(message = "CRM é obrigatório")
+	private String crm;
+	
 	@Override
 	public String toString() {
 		return "Medico [id=" + id + ", nome=" + nome + ", email=" + email + ", crm=" + crm + "]";
@@ -76,10 +83,5 @@ public class Medico implements Serializable {
 		this.crm = crm;
 	}
 
-	@NotEmpty(message = "{email.vazio}")
-	@Email
-	private String email;
-	
-	@NotBlank(message = "CRM é obrigatório")
-	private String crm;
+
 }
