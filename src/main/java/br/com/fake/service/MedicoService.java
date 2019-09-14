@@ -39,5 +39,9 @@ public class MedicoService {
 		this.repository.deleteById(id);
 		
 	}
+
+	public Medico getMedicoById(Long id) {
+		return this.repository.getOne(id);
+	}
 	
 }

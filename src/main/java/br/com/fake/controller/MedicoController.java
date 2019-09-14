@@ -63,6 +63,11 @@ public class MedicoController implements Serializable {
 		return mv;
 	}
 	
+	@GetMapping("/edit/{id}")
+	public ModelAndView edit(@PathVariable("id") Long id) {
+		return novo(this.service.getMedicoById(id));
+	}
+	
 	@GetMapping("/delete/{id}")
 	public ModelAndView excluir(@PathVariable Long id, RedirectAttributes attributes) {
 		ModelAndView mv = new ModelAndView("redirect:/medicos/list");
